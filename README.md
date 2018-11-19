@@ -14,4 +14,4 @@ Make sure you have npm installed globally
 
 3. Run `npm install`
 
-4. Run `plone` and start using
+4. Run `plop` and start using
