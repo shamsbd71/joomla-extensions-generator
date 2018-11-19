@@ -1,0 +1,7 @@
+{
+  "name": "plop-example",
+  "devDependencies": {
+    "inquirer-directory": "^2.1.0",
+    "plop": "^2.1.0"
+  }
+}

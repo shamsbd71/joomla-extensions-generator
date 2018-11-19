@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="{{ lowerCase pluginType }}" method="upgrade">
+	<name>plg_{{ lowerCase pluginType }}_{{ lowerCase pluginName }}</name>
+	<description>PLG_{{ constantCase pluginType }}_{{ constantCase pluginName }}_XML_DESCRIPTION</description>
+	<author>{{ author }}</author>
+	<authorEmail>{{ authorEmail }}</authorEmail>
+	<authorUrl>{{ authorUrl }}</authorUrl>
+	<creationDate>{{ creationDate }}</creationDate>
+	<copyright>{{ copyright }}</copyright>
+	<license>{{ licence }}</license>
+	<version>{{ version }}</version>
+
+	<files>
+		<filename plugin="{{ lowerCase pluginName }}">{{ lowerCase pluginName }}.php</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_{{ lowerCase pluginType }}_{{ lowerCase pluginName }}.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_{{ lowerCase pluginType }}_{{ lowerCase pluginName }}.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<!--
+				<field
+					name="exampleField"
+					type="radio"
+					label="PLG_{{ constantCase pluginType }}_{{ constantCase pluginName }}_EXAMPLE_FIELD_LABEL"
+					description="PLG_{{ constantCase pluginType }}_{{ constantCase pluginName }}_EXAMPLE_FIELD_DESC"
+					class="btn-group btn-group-yesno"
+					default="1"
+					filter="integer"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				-->
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>
