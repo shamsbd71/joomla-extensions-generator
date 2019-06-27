@@ -271,4 +271,190 @@ module.exports = function (plop) {
 			return actions;
 		}
 	});
+
+	// Component generator
+	plop.setGenerator('Create a Component', {
+		description: 'Lets you create a Joomla Component',
+		prompts: [
+			{
+				type: 'input',
+				name: 'componentName',
+				message: 'What is your component name?',
+				default: 'MyComponent',
+				validate: function (value) {
+					if ((/.+/).test(value)) { return true; }
+					return 'component name is required';
+				}
+			},
+			{
+				type: 'input',
+				name: 'version',
+				message: 'What is your component version?',
+				default: '1.0.0',
+				validate: function (value) {
+					if ((/.+/).test(value)) {
+						return true;
+					}
+				}
+			},
+			{
+				type: 'input',
+				name: 'creationDate',
+				message: "What is your component's creation date?",
+				default: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }),
+				validate: function (value) {
+					if ((/.+/).test(value)) {
+						return true;
+					}
+				}
+			},
+			{
+				type: 'input',
+				name: 'author',
+				message: 'What is your component author name?',
+				default: 'ThemeXpert',
+				validate: function (value) {
+					if ((/.+/).test(value)) {
+						return true;
+					}
+				}
+			},
+			{
+				type: 'input',
+				name: 'authorEmail',
+				message: 'What is your component author email?',
+				default: 'info@themexpert.com',
+				validate: function (value) {
+					if ((/.+/).test(value)) {
+						return true;
+					}
+				}
+			},
+			{
+				type: 'input',
+				name: 'authorUrl',
+				message: 'What is your component author Url?',
+				default: 'https://www.themexpert.com',
+				validate: function (value) {
+					if ((/.+/).test(value)) {
+						return true;
+					}
+				}
+			},
+			{
+				type: 'input',
+				name: 'copyright',
+				message: 'What is your copyright?',
+				default: 'Copyright (C) 2009 - 2018 ThemeXpert. All rights reserved.',
+				validate: function (value) {
+					if ((/.+/).test(value)) {
+						return true;
+					}
+				}
+			},
+			{
+				type: 'input',
+				name: 'licence',
+				message: 'What is your component licence?',
+				default: 'http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL',
+				validate: function (value) {
+					if ((/.+/).test(value)) {
+						return true;
+					}
+				}
+			},
+		],
+
+		actions: function(data) {
+			var actions = [
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/{{ lowerCase componentName }}.xml',
+					templateFile: 'templates/component/componentname.xml',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/script.php',
+					templateFile: 'templates/component/script.php',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/access.xml',
+					templateFile: 'templates/component/access.xml',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/config.xml',
+					templateFile: 'templates/component/config.xml',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/manifest.xml',
+					templateFile: 'templates/component/manifest.xml',
+					abortOnFail: true,
+					force: true
+				},
+
+				// site folder
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/site/{{ lowerCase componentName }}.php',
+					templateFile: 'templates/component/site/componentname.php',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/site/controller.php',
+					templateFile: 'templates/component/site/controller.php',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/site/controllers/welcome.php',
+					templateFile: 'templates/component/site/controllers/welcome.php',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/site/models/{{ lowerCase componentName }}.php',
+					templateFile: 'templates/component/site/models/componentname.php',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/site/views/welcome/view.html.php',
+					templateFile: 'templates/component/site/views/welcome/view.html.php',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/site/views/welcome/tmpl/default.php',
+					templateFile: 'templates/component/site/views/welcome/tmpl/default.php',
+					abortOnFail: true,
+					force: true
+				},
+				{
+					type: 'add',
+					path: 'output/component/{{ lowerCase componentName }}/site/language/en-GB/en-GB.com_{{ lowerCase componentName }}.ini',
+					templateFile: 'templates/component/site/language/en-GB/en-GB.com_componentname.ini',
+					abortOnFail: true
+				},
+			];
+
+			return actions;
+		}
+	});
 };

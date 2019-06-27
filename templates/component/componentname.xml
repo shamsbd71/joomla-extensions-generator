@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.6" method="upgrade">
+	<name>com_{{ lowerCase componentName }}</name>
+	<description>COM_{{ constantCase componentName }}_XML_DESCRIPTION</description>
+
+	<author>{{ author }}</author>
+	<authorEmail>{{ authorEmail }}</authorEmail>
+	<authorUrl>{{ authorUrl }}</authorUrl>
+	<creationDate>{{ creationDate }}</creationDate>
+	<copyright>{{ copyright }}</copyright>
+	<license>{{ licence }}</license>
+	<version>{{ version }}</version>
+	<scriptfile>script.php</scriptfile>
+	
+	<files folder="site">
+		<file>controller.php</file>
+		<file>{{ lowerCase componentName }}.php</file>
+		<folder>controllers</folder>
+		<folder>language</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+    </files>
+
+	<administration>
+		<menu>COM_{{ upperCase componentName }}</menu>
+		<files folder="administrator">
+			<file>access.xml</file>
+			<file>config.xml</file>
+			<file>controller.php</file>
+			<file>{{ lowerCase componentName }}.php</file>
+			<folder>controllers</folder>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+		</files>
+	</administration>
+	<media destination="com_{{ lowerCase componentName }}" folder="media/com_{{ lowerCase componentName }}">
+		<folder>css</folder>
+	</media>
+	<!-- <updateservers> -->
+		<!-- Note: No spaces or linebreaks allowed between the server tags -->
+		<!-- <server type="extension" name="{{ constantCase componentName }} Update Site"></server> -->
+	<!-- </updateservers> -->
+</extension>
